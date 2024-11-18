@@ -1,18 +1,11 @@
 <script setup>
+import Quiz from '@/components/Quiz/Quiz.vue';
+import { state } from '@/stores/quizStore';
 
-import TabbableTextarea from '@/components/TabbableTextarea.vue';
-import { ref } from "vue";
-let comment = ref('test value');
-
-setTimeout(() => {
-  comment.value = 'it works!';
-}, 2000);
-</script>
+</script >
 
 <template>
   <main>
-    <form>
-      <TabbableTextarea v-model="comment" style="width: 100%; height: 300px;" />
-    </form>
+    <Quiz :quiz="state" />
   </main>
 </template>
